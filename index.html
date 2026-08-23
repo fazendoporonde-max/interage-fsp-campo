@@ -347,7 +347,7 @@ function home(){
    '<div class="card process-card">'+
 '<div class="process-head"><div><div class="process-kicker">Leitura técnica</div><h2>Desenho técnico de processo</h2><p class="process-sub">Fluxo esquemático interativo para apoio ao treinamento. Toque em um equipamento ou instrumento para visualizar sua função e o cuidado operacional associado.</p></div><div class="process-status">Modo treinamento</div></div>'+
 '<div class="process-scroll">'+diagram()+'</div>'+
-'<div class="process-tip">No celular, deslize horizontalmente para visualizar todo o fluxo sem reduzir a legibilidade das TAGs.</div>'+
+'<div class="process-tip">No celular, deslize horizontalmente para visualizar todo o fluxo.</div>'+
 '<div class="process-info" aria-live="polite"><div class="process-info-tag"><strong id="processInfoTag">TQ-01</strong><span>Elemento selecionado</span></div><div class="process-info-body"><b id="processInfoTitle">Tanque de processo</b><p id="processInfoText">Selecione um equipamento ou instrumento no desenho para visualizar a orientação técnica correspondente.</p></div></div>'+
 '<div class="process-disclaimer"><b>Uso didático:</b> representação esquemática para fins de treinamento. Não utilizar este desenho para alinhamento operacional, bloqueio, liberação, partida ou tomada de decisão em campo. Sempre consultar os documentos operacionais vigentes.</div></div>'
   );
@@ -379,16 +379,10 @@ function diagram(){
      </style>
    </defs>
 
-   <!-- Título interno do fluxo -->
    <text x="38" y="34" class="p-muted">FLUXO ESQUEMÁTICO • PROCESSO DE TRANSFERÊNCIA</text>
+   <line x1="202" y1="170" x2="965" y2="170" class="p-line"/>
 
-   <!-- Linha principal -->
-   <line x1="202" y1="170" x2="1060" y2="170" class="p-line" marker-end="url(#flowArrow)"/>
-
-   <!-- TQ-01 -->
-   <g class="p-hit" tabindex="0"
-      onclick="selectProcessElement('TQ-01','Tanque de processo','Representação didática de um tanque de processo. Antes de qualquer transferência, confirme nível, condição operacional, destino e alinhamento conforme procedimento aplicável.')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){this.onclick()}">
+   <g class="p-hit" tabindex="0" onclick="selectProcessElement('TQ-01','Tanque de processo','Representação didática de um tanque de processo. Antes de qualquer transferência, confirme nível, condição operacional, destino e alinhamento conforme procedimento aplicável.')">
      <rect x="38" y="90" width="180" height="160" rx="6" class="p-eq"/>
      <line x1="38" y1="126" x2="218" y2="126" class="p-thin"/>
      <text x="128" y="116" text-anchor="middle" class="p-muted">TANQUE DE PROCESSO</text>
@@ -396,70 +390,52 @@ function diagram(){
      <text x="128" y="205" text-anchor="middle" class="p-muted">ORIGEM</text>
    </g>
 
-   <!-- XV-101 -->
-   <g class="p-hit" tabindex="0"
-      onclick="selectProcessElement('XV-101','Válvula de bloqueio / alinhamento','Elemento didático de bloqueio e alinhamento. A posição deve ser verificada contra procedimento, condição de campo e destino correto antes da movimentação.')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){this.onclick()}">
+   <g class="p-hit" tabindex="0" onclick="selectProcessElement('XV-101','Válvula de bloqueio / alinhamento','Elemento didático de bloqueio e alinhamento. A posição deve ser verificada contra procedimento, condição de campo e destino correto antes da movimentação.')">
      <polygon points="300,142 334,170 300,198" class="p-eq2"/>
      <polygon points="368,142 334,170 368,198" class="p-eq2"/>
      <text x="334" y="228" text-anchor="middle" class="p-orange">XV-101</text>
      <text x="334" y="246" text-anchor="middle" class="p-muted">BLOQUEIO</text>
    </g>
 
-   <!-- P-101 -->
-   <g class="p-hit" tabindex="0"
-      onclick="selectProcessElement('P-101','Bomba de transferência','Antes da partida, verificar sucção, descarga, alinhamento, condições do equipamento, limites operacionais e ausência de condições impeditivas.')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){this.onclick()}">
-     <circle cx="490" cy="170" r="50" class="p-eq"/>
-     <path d="M466 170 L515 142 L515 198 Z" class="p-thin"/>
-     <text x="490" y="242" text-anchor="middle" class="p-orange">P-101</text>
-     <text x="490" y="260" text-anchor="middle" class="p-muted">TRANSFERÊNCIA</text>
+   <g class="p-hit" tabindex="0" onclick="selectProcessElement('P-101','Bomba centrífuga de transferência','Antes da partida, verificar sucção, descarga, alinhamento, condições do equipamento, limites operacionais e ausência de condições impeditivas.')">
+     <circle cx="500" cy="170" r="50" class="p-eq"/>
+     <path d="M470 170 C484 145, 520 145, 533 170 C520 195, 484 195, 470 170 Z" class="p-thin"/>
+     <path d="M500 170 L535 170" class="p-thin"/>
+     <text x="500" y="242" text-anchor="middle" class="p-orange">P-101</text>
+     <text x="500" y="260" text-anchor="middle" class="p-muted">BOMBA CENTRÍFUGA</text>
    </g>
 
-   <!-- PI-101 -->
-   <g class="p-hit" tabindex="0"
-      onclick="selectProcessElement('PI-101','Indicador de pressão','A pressão deve ser interpretada em conjunto com limites operacionais, tendência e condição do processo. Um valor fora da faixa exige resposta conforme procedimento.')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){this.onclick()}">
-     <line x1="650" y1="170" x2="650" y2="112" class="p-thin"/>
-     <circle cx="650" cy="82" r="31" class="p-eq"/>
-     <text x="650" y="77" text-anchor="middle" class="p-small">PI</text>
-     <text x="650" y="96" text-anchor="middle" class="p-orange">101</text>
-     <text x="650" y="224" text-anchor="middle" class="p-muted">PRESSÃO</text>
+   <g class="p-hit" tabindex="0" onclick="selectProcessElement('PI-101','Indicador de pressão','A pressão deve ser interpretada em conjunto com limites operacionais, tendência e condição do processo. Um valor fora da faixa exige resposta conforme procedimento.')">
+     <line x1="670" y1="170" x2="670" y2="112" class="p-thin"/>
+     <circle cx="670" cy="82" r="31" class="p-eq"/>
+     <text x="670" y="77" text-anchor="middle" class="p-small">PI</text>
+     <text x="670" y="96" text-anchor="middle" class="p-orange">101</text>
+     <text x="670" y="224" text-anchor="middle" class="p-muted">PRESSÃO</text>
    </g>
 
-   <!-- FT-101 -->
-   <g class="p-hit" tabindex="0"
-      onclick="selectProcessElement('FT-101','Transmissor de vazão','A vazão é uma variável de processo importante para acompanhamento de estabilidade, desempenho e permanência dentro dos limites operacionais.')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){this.onclick()}">
-     <line x1="792" y1="170" x2="792" y2="112" class="p-thin"/>
-     <circle cx="792" cy="82" r="31" class="p-eq"/>
-     <text x="792" y="77" text-anchor="middle" class="p-small">FT</text>
-     <text x="792" y="96" text-anchor="middle" class="p-orange">101</text>
-     <text x="792" y="224" text-anchor="middle" class="p-muted">VAZÃO</text>
+   <g class="p-hit" tabindex="0" onclick="selectProcessElement('FT-101','Transmissor de vazão','A vazão é uma variável de processo importante para acompanhamento de estabilidade, desempenho e permanência dentro dos limites operacionais.')">
+     <line x1="820" y1="170" x2="820" y2="112" class="p-thin"/>
+     <circle cx="820" cy="82" r="31" class="p-eq"/>
+     <text x="820" y="77" text-anchor="middle" class="p-small">FT</text>
+     <text x="820" y="96" text-anchor="middle" class="p-orange">101</text>
+     <text x="820" y="224" text-anchor="middle" class="p-muted">VAZÃO</text>
    </g>
 
-   <!-- Dreno / amostragem -->
-   <g class="p-hit" tabindex="0"
-      onclick="selectProcessElement('DRENO','Dreno / ponto de amostragem','Representação didática de uma derivação. Drenagem ou amostragem deve seguir procedimento, contenção adequada, identificação do destino e controles aplicáveis.')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){this.onclick()}">
-     <line x1="570" y1="170" x2="570" y2="272" class="p-thin"/>
-     <polygon points="548,250 570,272 592,250" class="p-eq2"/>
-     <line x1="532" y1="284" x2="608" y2="284" class="p-thin"/>
-     <text x="630" y="278" class="p-small">DRENO / AMOSTRAGEM</text>
+   <g class="p-hit" tabindex="0" onclick="selectProcessElement('DRENO','Dreno / ponto de amostragem','Representação didática de uma derivação. Drenagem ou amostragem deve seguir procedimento, contenção adequada, identificação do destino e controles aplicáveis.')">
+     <line x1="600" y1="170" x2="600" y2="276" class="p-thin"/>
+     <polygon points="578,252 600,276 622,252" class="p-eq2"/>
+     <line x1="560" y1="288" x2="640" y2="288" class="p-thin"/>
+     <text x="662" y="282" class="p-small">DRENO / AMOSTRAGEM</text>
    </g>
 
-   <!-- Header -->
-   <g class="p-hit" tabindex="0"
-      onclick="selectProcessElement('HEADER','Header de produção','Destino esquemático da transferência. Confirmar identificação do destino e alinhamento completo antes de liberar o fluxo.')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){this.onclick()}">
+   <g class="p-hit" tabindex="0" onclick="selectProcessElement('HEADER','Header de produção','Destino esquemático da transferência. Confirmar identificação do destino e alinhamento completo antes de liberar o fluxo.')">
      <rect x="965" y="132" width="166" height="76" rx="7" class="p-eq"/>
      <text x="1048" y="160" text-anchor="middle" class="p-small">HEADER DE</text>
      <text x="1048" y="185" text-anchor="middle" class="p-orange">PRODUÇÃO</text>
    </g>
 
-   <!-- Indicação de fluxo -->
-   <text x="846" y="151" class="p-muted">SENTIDO DO FLUXO</text>
-   <line x1="844" y1="158" x2="925" y2="158" class="p-thin" marker-end="url(#flowArrow)"/>
+   <text x="900" y="140" text-anchor="middle" class="p-muted">SENTIDO DO FLUXO</text>
+   <line x1="858" y1="156" x2="938" y2="156" class="p-thin" marker-end="url(#flowArrow)"/>
  </svg>`;
 }
 
